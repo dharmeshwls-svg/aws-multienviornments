@@ -33,7 +33,7 @@ variable "regions" {
   type        = string
   default     = ""
 
-   validation {
+  validation {
     condition     = contains(["us-east-1", "us-west-2"], var.regions)
     error_message = "❌ Invalid region! Allowed values: us-east-1, us-west-2"
   }
@@ -42,13 +42,13 @@ variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
   default     = ""
-  
+
 }
 variable "public_subnet_ids" {
   description = "List of public subnet IDs"
   type        = list(string)
   default     = []
-  
+
 }
 variable "private_subnet_ids" {
   description = "List of private subnet IDs"
